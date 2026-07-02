@@ -2,9 +2,9 @@
 
 State functions take (A, sigma) with A a zero-diagonal symmetric
 adjacency; the self-weighting enters through 1/(d_i + 1).  Definitions
-follow the main text of Conrad & Tabor (2024) as pinned down in
-notes.tex: friends/enemies are statements about ACTIONS (sign of
-sigma_j), not opinions, and fraughtness is the non-Pareto-optimal Nash
+follow the main text of Conrad & Tabor (2024): friends/enemies are
+statements about ACTIONS (sign of sigma_j), not opinions, and
+fraughtness is the non-Pareto-optimal Nash
 condition (crowd split, no single player can improve their own
 agreement by switching sides).
 """
@@ -134,8 +134,8 @@ def state_fractions(traj):
 def alpha_estimate(traj, l=None, u=None):
     """Time-weighted fraction of players past the position threshold,
     abs(sigma_i) > l, restricted to intervals where the global window
-    is open, abs(mean(sigma)) < u.  On K_N this estimates the active-window
-    slope alpha = 1 - 2l/(T+2) of notes.tex; on other graphs it is a
+    is open, abs(mean(sigma)) < u.  On K_N this estimates the
+    active-window slope alpha = 1 - 2l/(T+2); on other graphs it is a
     heuristic global proxy."""
     l = traj.params["l"] if l is None else l
     u = traj.params["u"] if u is None else u

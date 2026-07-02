@@ -1,4 +1,4 @@
-"""The discrete APEM dynamics (update sequence) from Damian's notes.
+"""The discrete APEM dynamics: the update sequence.
 
 State: actions sigma_i in [-1, 1] (continuous), opinions q_i in {-1, +1}.
 On step k draw tau ~ Exp[mean T/N] (rate N/T) and j ~ Uniform{0..N-1};

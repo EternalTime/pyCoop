@@ -1,7 +1,7 @@
 """pyCoop: discrete APEM dynamics on arbitrary graphs.
 
-Implements the update sequence of Damian's notes (equivalent embedded
-chain of Conrad & Tabor 2024), observables (agreement, fraughtness,
+Implements the update sequence (the exact embedded chain of Conrad &
+Tabor 2024), observables (agreement, fraughtness,
 obdurateness, alpha), and visualization.
 """
 
