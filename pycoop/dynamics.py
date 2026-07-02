@@ -5,7 +5,7 @@ On step k draw tau ~ Exp[mean T/N] (rate N/T) and j ~ Uniform{0..N-1};
 every action drifts sigma_i -> clip(sigma_i + q_i * tau, -1, 1); then
 player j's opinion flips, q_j -> -q_j, iff
 
-    -u < sigma_bar_j < u   and   |sigma_j| > l,
+    -u < sigma_bar_j < u   and   abs(sigma_j) > l,
 
 where sigma_bar_j = (sigma_j + sum_k A_jk sigma_k) / (d_j + 1) is the
 local mean action.  T is the only dimensionless timescale; u and l are
@@ -82,8 +82,8 @@ class Game:
     Parameters
     ----------
     G : networkx.Graph or adjacency array (no self-loops)
-    u : agreement threshold (flip requires |sigma_bar_j| < u)
-    l : position threshold (flip requires |sigma_j| > l)
+    u : agreement threshold (flip requires abs(sigma_bar_j) < u)
+    l : position threshold (flip requires abs(sigma_j) > l)
     T : timescale; inter-event tau ~ Exp with mean T/N by default
     step_law : "exp" (default), a positive float h for fixed steps,
         or a callable rng -> tau.

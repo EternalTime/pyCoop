@@ -38,12 +38,12 @@ def local_mean(A, sigma):
 
 
 def agreement(A, sigma):
-    """a_i = |sigma_bar_i| in [0, 1]."""
+    """a_i = abs(sigma_bar_i) in [0, 1]."""
     return np.abs(local_mean(A, sigma))
 
 
 def friend_enemy_weights(A, sigma):
-    """(F, E): summed |sigma_j| over neighbors sharing / opposing
+    """(F, E): summed abs(sigma_j) over neighbors sharing / opposing
     player i's action sign.  Assumes sigma_i != 0 for all i."""
     A = np.asarray(A, float)
     sigma = np.asarray(sigma, float)
@@ -133,8 +133,8 @@ def state_fractions(traj):
 
 def alpha_estimate(traj, l=None, u=None):
     """Time-weighted fraction of players past the position threshold,
-    |sigma_i| > l, restricted to intervals where the global window is
-    open, |mean(sigma)| < u.  On K_N this estimates the active-window
+    abs(sigma_i) > l, restricted to intervals where the global window
+    is open, abs(mean(sigma)) < u.  On K_N this estimates the active-window
     slope alpha = 1 - 2l/(T+2) of notes.tex; on other graphs it is a
     heuristic global proxy."""
     l = traj.params["l"] if l is None else l

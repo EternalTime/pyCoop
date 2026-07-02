@@ -1,0 +1,31 @@
+/* pyCoop color scheme: the UConn palette
+   (https://brand.uconn.edu/visual-identity/guidelines/).
+   Navy #000E2F and Grey #7C878E are primary; Royal Blue #013ECD is
+   an accent only.  Overrides the sphinx_rtd_theme defaults. */
+
+.wy-side-nav-search,
+.wy-nav-top {
+    background: #000E2F;
+}
+
+.wy-side-nav-search input[type=text] {
+    border-color: #013ECD;
+}
+
+.wy-nav-side {
+    background: #000E2F;
+}
+
+.wy-menu-vertical p.caption {
+    color: #7C878E;
+}
+
+/* Royal Blue accent for links (replaces the RTD #2980B9). */
+a,
+a:visited {
+    color: #013ECD;
+}
+
+a:hover {
+    color: #000E2F;
+}
