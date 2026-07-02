@@ -1,0 +1,17 @@
+[project]
+name = "pyCoop"
+version = "0.1.0"
+description = "Discrete APEM dynamics (Conrad & Tabor 2024) on arbitrary graphs: simulation, observables, visualization."
+authors = [{ name = "Damian Sowinski", email = "drsowinski@gmail.com" }]
+requires-python = ">=3.9"
+dependencies = ["numpy", "networkx", "matplotlib"]
+
+[project.optional-dependencies]
+interactive = ["ipywidgets"]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["pycoop*"]
