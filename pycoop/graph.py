@@ -2,7 +2,7 @@
 
 Graphs are simple, undirected, and carry NO self-loops; the self-weighting
 in the local mean action is handled by the 1/(d_i + 1) prefactor in the
-dynamics/observables, following Damian's notes.
+dynamics/observables.
 """
 
 import networkx as nx
@@ -79,7 +79,7 @@ def paw():
     """The paw: triangle {0, 1, 2} with pendant 3 hanging off hub 2.
 
     Nodes 0, 1 are the free vertices, 2 the hub, 3 the pendant --
-    the smallest graph admitting fraught states (see notes.tex).
+    the smallest graph admitting fraught states.
     """
     G = nx.Graph()
     G.add_edges_from([(0, 1), (0, 2), (1, 2), (2, 3)])
