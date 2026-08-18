@@ -9,12 +9,18 @@ tools for measuring fraughtness, obdurateness, and everything in between.
 ```
 git clone https://github.com/EternalTime/pyCoop.git
 cd pyCoop
+python3 -m venv .venv
+source .venv/bin/activate
 pip install -e .
 ```
 
-Requires Python 3.9+. Dependencies (numpy, networkx, matplotlib) are
-installed automatically; `pip install ipywidgets` enables the in-notebook
-trajectory scrubber.
+Requires Python 3.9 or newer (tested on 3.9 through 3.14). Dependencies
+(numpy, networkx, matplotlib) are installed automatically; `pip install
+'.[interactive]'` enables the in-notebook trajectory scrubber.
+
+The [Getting Started
+guide](https://damiansowinski.com/pyCoop/getting_started.html) is the
+authority on installation; this section mirrors it.
 
 ## Modules
 
@@ -39,11 +45,27 @@ print(obs.classify(traj.A, sigma))   # consensus | fraught | obdurate
 print(obs.state_fractions(traj))     # time-weighted class fractions
 ```
 
+## Testing
+
+From the repository root, with the virtual environment active:
+
+```
+source .venv/bin/activate
+pip install -e '.[test]'
+pytest
+```
+
 ## Documentation
 
 The documentation is hosted at
 [damiansowinski.com/pyCoop](https://damiansowinski.com/pyCoop/). To build
-locally: `sphinx-build -b html docs docs/_build` from the repository root.
+locally, from the repository root with the virtual environment active:
+
+```
+source .venv/bin/activate
+pip install -e '.[docs]'
+sphinx-build -b html docs docs/_build
+```
 
 ## License
 
