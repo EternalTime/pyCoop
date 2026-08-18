@@ -4,10 +4,20 @@ version = "0.1.0"
 description = "Discrete APEM dynamics (Conrad & Tabor 2024) on arbitrary graphs: simulation, observables, visualization."
 authors = [{ name = "Damian Sowinski", email = "drsowinski@gmail.com" }]
 requires-python = ">=3.9"
-dependencies = ["numpy", "networkx", "matplotlib"]
+dependencies = ["numpy", "networkx>=2.6", "matplotlib"]
+classifiers = [
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
 
 [project.optional-dependencies]
 interactive = ["ipywidgets"]
+docs = ["sphinx", "sphinx-rtd-theme"]
+test = ["pytest"]
 
 [build-system]
 requires = ["setuptools>=61"]

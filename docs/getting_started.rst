@@ -8,20 +8,40 @@ exotic — so the install is quick.
 Installation
 ^^^^^^^^^^^^
 
-pyCoop requires Python 3.9 or newer. Install straight from GitHub::
+pyCoop requires Python 3.9 or newer, and is tested on 3.9 through 3.14.
+Install it into a virtual environment — Homebrew and other
+distribution-managed Pythons refuse system-wide installs (:pep:`668`),
+and ``pip`` is often available only as ``pip3`` outside a virtual
+environment::
 
+    python3 -m venv .venv
+    source .venv/bin/activate
+    python -m pip install --upgrade pip
     pip install git+https://github.com/EternalTime/pyCoop
 
 or clone and install in editable mode if you plan to poke at the source::
 
     git clone https://github.com/EternalTime/pyCoop.git
     cd pyCoop
+    python3 -m venv .venv
+    source .venv/bin/activate
+    python -m pip install --upgrade pip
     pip install -e .
 
 For the in-notebook trajectory scrubber you'll also want
-``pip install ipywidgets``. Check the install::
+``pip install 'pyCoop[interactive]'``. Check the install::
 
     >>> import pycoop
+
+To run the test suite, or to build these docs, install the matching extra
+from a clone with the environment active::
+
+    source .venv/bin/activate
+    pip install -e '.[test]'
+    pytest
+
+    pip install -e '.[docs]'
+    sphinx-build -b html docs docs/_build
 
 First game
 ^^^^^^^^^^
