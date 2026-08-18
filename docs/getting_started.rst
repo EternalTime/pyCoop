@@ -16,6 +16,7 @@ environment::
 
     python3 -m venv .venv
     source .venv/bin/activate
+    python -m pip install --upgrade pip
     pip install git+https://github.com/EternalTime/pyCoop
 
 or clone and install in editable mode if you plan to poke at the source::
@@ -24,6 +25,7 @@ or clone and install in editable mode if you plan to poke at the source::
     cd pyCoop
     python3 -m venv .venv
     source .venv/bin/activate
+    python -m pip install --upgrade pip
     pip install -e .
 
 For the in-notebook trajectory scrubber you'll also want

@@ -2,14 +2,13 @@
 
 This file is the project's committed home for project-intrinsic agent knowledge: build, test, release, architecture, and sharp-edge notes that should travel with the code.
 
-- Development happens in a venv inside the clone (`python3 -m venv .venv`). This
-  machine's Homebrew Python has no `pip` on PATH and refuses system-wide installs
-  under PEP 668, so a bare `pip install -e .` fails twice over.
+- Follow `README.md` for the exact install and test commands.
+  `docs/getting_started.rst` is the reader-facing copy of the same recipe; both surfaces deliberately stand alone, so a change to one must be mirrored in the other.
+- Development happens in a venv inside the clone.
+  This machine's Homebrew Python has no `pip` on PATH and refuses system-wide installs under PEP 668, so a bare `pip install -e .` fails twice over.
 - Dependency groups live in `pyproject.toml`: `test` (pytest), `docs`
   (sphinx, sphinx-rtd-theme), `interactive` (ipywidgets).
-- Supported range is Python 3.9-3.14; `pytest` from the repo root is the
-  whole suite. `README.md` and `docs/getting_started.rst` both state the
-  install and must agree with each other and with `pyproject.toml`.
+- Supported range is Python 3.9-3.14; `pytest` from the repo root is the whole suite.
 - Docs are built with `sphinx-build -b html docs docs/_build` and published at
   https://damiansowinski.com/pyCoop/ by copying into the website repo.
 
