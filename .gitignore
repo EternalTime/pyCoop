@@ -6,3 +6,4 @@ build/
 .ipynb_checkpoints/
 .DS_Store
 .venv/
+docs/_build/

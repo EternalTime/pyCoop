@@ -49,8 +49,8 @@ def test_traces_subset_of_players(traj):
 
 def test_animate_produces_frames(traj):
     anim = viz.animate(traj, stride=5)
-    assert anim is not None
-    anim._init_draw()
+    assert list(anim.new_frame_seq()) == list(range(0, traj.sigma.shape[0], 5))
+    plt.gcf().canvas.draw()
 
 
 def test_scrub_requires_ipywidgets(monkeypatch, traj):
