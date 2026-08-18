@@ -57,12 +57,13 @@ run::
     print(obs.classify(traj.A, sigma))
     print(f"absorbed at t = {traj.t_end:.1f} after {traj.steps} events")
 
-Three parameters govern everything. A player reconsiders only while their
-local mean action lies inside :math:`(-u, u)`, and only once committed,
-:math:`|\sigma_j| > l`, which keeps fence-sitters from flipping. The
-third, ``T``, sets the tempo: the mean wait between decision events across
-the network is :math:`T/N`. See :doc:`guide_dynamics` for the rules in
-full.
+Three parameters govern everything. The agreement threshold ``u`` lets a
+player reconsider only while their local mean action lies inside
+:math:`(-u, u)`, and the position threshold ``l`` lets them do it only
+once committed, :math:`|\sigma_j| > l`, which keeps fence-sitters from
+flipping. The third, ``T``, sets the tempo: the mean wait between decision
+events across the network is :math:`T/N`. See :doc:`guide_dynamics` for
+the rules in full.
 
 Now look at what happened::
 

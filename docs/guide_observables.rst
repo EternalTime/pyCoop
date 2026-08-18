@@ -22,7 +22,7 @@ Friends, enemies, and fraughtness
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Fix a state with no player exactly at zero, and split player :math:`i`'s
-neighbors by the sign of their *action* - opinions play no role here.
+neighbors by the sign of their *action*: opinions play no role here.
 Friends share :math:`i`'s sign, enemies oppose it, and each camp gets a
 weight,
 
