@@ -1,8 +1,8 @@
 # pyCoop
 
-A Python library for cooperation games on graphs — agents with continuous
-actions and binary opinions negotiating consensus over a network, with
-tools for measuring fraughtness, obdurateness, and everything in between.
+Cooperation games on graphs. Each agent carries a continuous action and a
+binary opinion, and the group negotiates consensus over a network. pyCoop
+runs the dynamics and measures what comes out.
 
 ## Installation
 
@@ -15,22 +15,20 @@ python -m pip install --upgrade pip
 pip install -e .
 ```
 
-Requires Python 3.9 or newer (tested on 3.9 through 3.14). Dependencies
-(numpy, networkx, matplotlib) are installed automatically; `pip install
-'.[interactive]'` enables the in-notebook trajectory scrubber.
-
-The [Getting Started
-guide](https://damiansowinski.com/pyCoop/getting_started.html) is the
-authority on installation; this section mirrors it.
+Requires Python 3.9 or newer (tested on 3.9 through 3.14). numpy,
+networkx, and matplotlib install automatically; `pip install
+'.[interactive]'` adds the in-notebook trajectory scrubber. The [Getting
+Started guide](https://damiansowinski.com/pyCoop/getting_started.html) is
+the authority on installation, and this section mirrors it.
 
 ## Modules
 
-| Module               | Description                                                                     |
-| -------------------- | ------------------------------------------------------------------------------- |
-| `pycoop.graph`       | Graph construction: ERG-until-connected sampling, complete/path/cycle/star/paw  |
-| `pycoop.dynamics`    | The update sequence — exact embedded chain with a pluggable inter-event clock   |
-| `pycoop.observables` | Agreement, alignment asymmetry, fraughtness, obdurateness, state fractions, α   |
-| `pycoop.viz`         | Graph snapshots, action traces, animation, interactive trajectory scrubbing     |
+| Module               | Description                                                                    |
+| -------------------- | ------------------------------------------------------------------------------ |
+| `pycoop.graph`       | ERG-until-connected sampling, complete/path/cycle/star/paw                     |
+| `pycoop.dynamics`    | The exact embedded chain, with a pluggable inter-event clock                   |
+| `pycoop.observables` | Agreement, alignment asymmetry, fraughtness, obdurateness, state fractions, α  |
+| `pycoop.viz`         | Snapshots, action traces, animation, interactive scrubbing                     |
 
 ## Example
 
@@ -48,7 +46,7 @@ print(obs.state_fractions(traj))     # time-weighted class fractions
 
 ## Testing
 
-From the repository root, with the virtual environment active:
+From the repository root:
 
 ```
 source .venv/bin/activate
@@ -58,9 +56,8 @@ pytest
 
 ## Documentation
 
-The documentation is hosted at
-[damiansowinski.com/pyCoop](https://damiansowinski.com/pyCoop/). To build
-locally, from the repository root with the virtual environment active:
+Hosted at [damiansowinski.com/pyCoop](https://damiansowinski.com/pyCoop/),
+and built from the repository root with:
 
 ```
 source .venv/bin/activate
