@@ -1,18 +1,15 @@
 Getting Started
 ===============
 
-In this guide you will install pyCoop and watch your first cooperation game
-play out. The library rests on numpy, networkx, and matplotlib — nothing
-exotic — so the install is quick.
+Here you will install pyCoop and run your first cooperation game.
 
 Installation
 ^^^^^^^^^^^^
 
 pyCoop requires Python 3.9 or newer, and is tested on 3.9 through 3.14.
-Install it into a virtual environment — Homebrew and other
-distribution-managed Pythons refuse system-wide installs (:pep:`668`),
-and ``pip`` is often available only as ``pip3`` outside a virtual
-environment::
+Install it into a virtual environment: distribution-managed Pythons refuse
+system-wide installs (:pep:`668`), and ``pip`` is often available only as
+``pip3`` outside one::
 
     python3 -m venv .venv
     source .venv/bin/activate
@@ -28,13 +25,13 @@ or clone and install in editable mode if you plan to poke at the source::
     python -m pip install --upgrade pip
     pip install -e .
 
-For the in-notebook trajectory scrubber you'll also want
+The in-notebook trajectory scrubber needs
 ``pip install 'pyCoop[interactive]'``. Check the install::
 
     >>> import pycoop
 
-To run the test suite, or to build these docs, install the matching extra
-from a clone with the environment active::
+The tests and these docs each have their own extra, installed from a
+clone with the environment active::
 
     source .venv/bin/activate
     pip install -e '.[test]'
@@ -46,9 +43,9 @@ from a clone with the environment active::
 First game
 ^^^^^^^^^^
 
-The paw — a triangle with a pendant tail — is the smallest graph that can
-trap a group in a fraught state, which makes it the right first playground.
-Build the graph, set the thresholds, and run::
+The paw - a triangle with a pendant tail - is the smallest graph that can
+trap a group in a fraught state, so build it, set the thresholds, and
+run::
 
     import pycoop as pc
     from pycoop import observables as obs
@@ -60,13 +57,13 @@ Build the graph, set the thresholds, and run::
     print(obs.classify(traj.A, sigma))
     print(f"absorbed at t = {traj.t_end:.1f} after {traj.steps} events")
 
-Three parameters govern everything. The agreement threshold ``u`` is an
-upper limit — a player can only reconsider while their local mean action
-is inside :math:`(-u, u)`. The position threshold ``l`` is a lower limit,
-keeping fence-sitters from flipping — a player must be committed,
-:math:`|\sigma_j| > l`, before a change of heart is allowed. And ``T``
-sets the tempo: the mean wait between decision events across the whole
-network is :math:`T/N`.
+Three parameters govern everything. The agreement threshold ``u`` lets a
+player reconsider only while their local mean action lies inside
+:math:`(-u, u)`, and the position threshold ``l`` lets them do it only
+once committed, :math:`|\sigma_j| > l`, which keeps fence-sitters from
+flipping. The third, ``T``, sets the tempo: the mean wait between decision
+events across the network is :math:`T/N`. See :doc:`guide_dynamics` for
+the rules in full.
 
 Now look at what happened::
 
@@ -76,14 +73,14 @@ Now look at what happened::
     viz.traces(traj)
     plt.show()
 
-Each curve is one player's action drifting toward its opinion; the shaded
+Each curve is one player's action drifting toward its opinion, the shaded
 bands are the change-of-heart regions :math:`l < |\sigma| < u`, and the
-crosses mark opinion flips. To see the same run as a movie on the graph::
+crosses mark flips. Or watch the run as a movie on the graph::
 
     anim = viz.animate(traj, stride=5)
     anim.save("paw.gif", writer="pillow")
 
-Run it a few more times with different seeds. Sometimes the paw finds
-consensus quickly; sometimes it lands in the fraught trap where the pendant
-single-handedly holds the hub against the pull of the two free vertices.
-How often each happens, and why, is the subject of the next two guides.
+Run it again with other seeds. Sometimes the paw finds consensus quickly,
+sometimes it lands in the fraught trap where the pendant single-handedly
+holds the hub against the two free vertices. How often each happens, and
+why, is the subject of the next two guides.
