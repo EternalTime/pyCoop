@@ -16,7 +16,7 @@ classifiers = [
 
 [project.optional-dependencies]
 interactive = ["ipywidgets"]
-docs = ["sphinx", "sphinx-rtd-theme"]
+docs = ["sphinx", "sphinx-rtd-theme", "sphinx-copybutton"]
 test = ["pytest"]
 
 [build-system]
