@@ -70,7 +70,7 @@ the time spent in them::
     import pycoop as pc
     from pycoop import observables as obs
 
-    game = pc.Game(pc.erg_connected(10, 0.1, rng=0), u=0.3, l=0.5, T=0.1)
+    game = pc.Game(pc.erg_connected(10, 0.1, rng=0), u=0.5, l=0.2, T=0.1)
     traj = game.run(rng=1)
     print(obs.state_fractions(traj))
 
