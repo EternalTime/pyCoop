@@ -112,7 +112,7 @@ def scrub(traj, G=None, pos=None, cmap="coolwarm", node_size=300):
         from ipywidgets import IntSlider, interact
     except ImportError as e:
         raise ImportError(
-            "scrub requires ipywidgets: pip install 'pyCoop[interactive]'"
+            "scrub requires ipywidgets: pip install ipywidgets"
         ) from e
     G = as_graph(traj.A if G is None else G)
     pos = _layout(G, pos)

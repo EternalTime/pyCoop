@@ -25,8 +25,9 @@ or clone and install in editable mode if you plan to poke at the source::
     python -m pip install --upgrade pip
     pip install -e .
 
-The in-notebook trajectory scrubber needs
-``pip install 'pyCoop[interactive]'``. Check the install::
+The in-notebook trajectory scrubber needs the ``interactive`` extra:
+``pip install 'pyCoop[interactive] @ git+https://github.com/EternalTime/pyCoop'``,
+or ``pip install -e '.[interactive]'`` from a clone. Check the install::
 
     >>> import pycoop
 
