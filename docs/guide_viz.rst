@@ -66,7 +66,9 @@ line marking where in the run you're standing::
 
     viz.scrub(traj)
 
-This requires the ``interactive`` extra (``pip install
-'pyCoop[interactive]'``; see :doc:`getting_started`). It is the fastest
-way to find the moment a run commits: drag until the flips stop, and
-you're looking at the instant the last window shut.
+This requires the ``interactive`` extra:
+``pip install 'pyCoop[interactive] @ git+https://github.com/EternalTime/pyCoop'``,
+or ``pip install -e '.[interactive]'`` from a clone (see
+:doc:`getting_started`). It is the fastest way to find the moment a run
+commits: drag until the flips stop, and you're looking at the instant the
+last window shut.
