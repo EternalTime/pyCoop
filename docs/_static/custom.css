@@ -5,11 +5,11 @@
 
 .wy-side-nav-search,
 .wy-nav-top {
-    background: #000E2F;
+    background: #013ECD;   /* Royal Blue — brighter masthead, contrasts the navy nav below */
 }
 
 .wy-side-nav-search input[type=text] {
-    border-color: #013ECD;
+    border-color: #ffffff;
 }
 
 .wy-nav-side {
@@ -20,12 +20,23 @@
     color: #7C878E;
 }
 
-/* Royal Blue accent for links (replaces the RTD #2980B9). */
-a,
-a:visited {
+/* Lighter menu text for readability on the navy nav.
+   Current section sits on a light panel, so keep it dark. */
+.wy-menu-vertical a {
+    color: #e6ebf1;
+}
+
+.wy-menu-vertical li.current a {
+    color: #404040;
+}
+
+/* Royal Blue accent for content links (replaces the RTD #2980B9).
+   Scoped to .rst-content so it does not override the sidebar menu text. */
+.rst-content a,
+.rst-content a:visited {
     color: #013ECD;
 }
 
-a:hover {
+.rst-content a:hover {
     color: #000E2F;
 }

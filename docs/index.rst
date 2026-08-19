@@ -48,6 +48,21 @@ Reference
    api/pycoop
    license
 
+Citing
+^^^^^^
+
+Sowinski DR. *pyCoop* [computer software]. Version 0.1.0. 2026. Accessed July 21, 2026. https://github.com/EternalTime/pyCoop
+
+.. code-block:: bibtex
+
+   @software{sowinski_pycoop,
+     author  = {Sowinski, Damian R.},
+     title   = {pyCoop: Cooperation games on graphs},
+     year    = {2026},
+     version = {0.1.0},
+     url     = {https://github.com/EternalTime/pyCoop}
+   }
+
 References
 ^^^^^^^^^^
 
