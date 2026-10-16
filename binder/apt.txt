@@ -1,0 +1,3 @@
+# Debian packages for the Binder image: ffmpeg lets the Visualization guide
+# save its animation as an mp4.
+ffmpeg

@@ -56,14 +56,7 @@ pytest
 
 ## Documentation
 
-Hosted at [damiansowinski.com/pyCoop](https://damiansowinski.com/pyCoop/),
-and built from the repository root with:
-
-```
-source .venv/bin/activate
-pip install -e '.[docs]'
-sphinx-build -b html docs docs/_build
-```
+Hosted at [damiansowinski.com/pyCoop](https://damiansowinski.com/pyCoop/).
 
 ## License
 

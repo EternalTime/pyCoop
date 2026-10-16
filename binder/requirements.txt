@@ -1,0 +1,4 @@
+# Binder builds its image from these files: install pyCoop itself, with the
+# interactive extra the scrubber needs, from the repository checkout so the
+# notebooks in docs/ can import it.
+.[interactive]
