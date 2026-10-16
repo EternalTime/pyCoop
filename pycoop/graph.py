@@ -43,7 +43,7 @@ def as_graph(G):
 
 
 def erg_connected(n, p_edge, rng=None, max_tries=100_000):
-    """Erdos-Renyi-Gilbert G(n, p), resampled until connected -- the
+    """Erdos-Renyi-Gilbert G(n, p), resampled until connected - the
     topology generator used in Conrad & Tabor (2024)."""
     rng = np.random.default_rng(rng)
     for _ in range(max_tries):
@@ -78,7 +78,7 @@ def star(n):
 def paw():
     """The paw: triangle {0, 1, 2} with pendant 3 hanging off hub 2.
 
-    Nodes 0, 1 are the free vertices, 2 the hub, 3 the pendant --
+    Nodes 0, 1 are the free vertices, 2 the hub, 3 the pendant -
     the smallest graph admitting fraught states.
     """
     G = nx.Graph()

@@ -1,0 +1,6 @@
+{#- The browser-tab title joins the page title and the manual's title with a
+    plain dash, where the theme puts an em dash. #}
+{%- extends "!layout.html" %}
+{%- block htmltitle %}
+  <title>{{ title|striptags|e }}{% if not embedded and docstitle %} - {{ docstitle|e }}{% endif %}</title>
+{%- endblock %}
