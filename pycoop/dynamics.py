@@ -14,7 +14,7 @@ s_theta of Conrad & Tabor 2024).
 
 The inter-event law is pluggable: "exp" recovers the paper (exact
 embedded chain); a float h gives the fixed-step variant (a *different*
-model -- the robustness knob for the criticality program); a callable
+model - the robustness knob for the criticality program); a callable
 rng -> tau gives anything else.
 """
 
@@ -85,8 +85,7 @@ class Game:
     u : agreement threshold (flip requires abs(sigma_bar_j) < u)
     l : position threshold (flip requires abs(sigma_j) > l)
     T : timescale; inter-event tau ~ Exp with mean T/N by default
-    step_law : "exp" (default), a positive float h for fixed steps,
-        or a callable rng -> tau.
+    step_law : "exp" (default), a fixed step h > 0, or a callable rng -> tau
     """
 
     def __init__(self, G, u, l, T, step_law="exp"):

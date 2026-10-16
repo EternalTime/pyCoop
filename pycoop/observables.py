@@ -69,7 +69,7 @@ def is_consensus(sigma):
 
 def is_fraught(A, sigma):
     """No zeros, non-consensus, and every y_i >= 0: split but locally
-    content -- a non-Pareto-optimal Nash equilibrium."""
+    content - a non-Pareto-optimal Nash equilibrium."""
     sigma = np.asarray(sigma, float)
     if np.any(sigma == 0.0) or is_consensus(sigma):
         return False
