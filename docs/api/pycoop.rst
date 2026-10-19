@@ -1,5 +1,5 @@
-pycoop package
-==============
+API Reference
+=============
 
 .. automodule:: pycoop
    :no-members:

@@ -81,11 +81,16 @@ class Game:
 
     Parameters
     ----------
-    G : networkx.Graph or adjacency array (no self-loops)
-    u : agreement threshold (flip requires abs(sigma_bar_j) < u)
-    l : position threshold (flip requires abs(sigma_j) > l)
-    T : timescale; inter-event tau ~ Exp with mean T/N by default
-    step_law : "exp" (default), a fixed step h > 0, or a callable rng -> tau
+    G : networkx.Graph or array_like
+        the graph, or its adjacency array, with no self-loops.
+    u : float
+        agreement threshold (flip requires abs(sigma_bar_j) < u)
+    l : float
+        position threshold (flip requires abs(sigma_j) > l)
+    T : float
+        timescale; inter-event tau ~ Exp with mean T/N by default
+    step_law : str, float or callable
+        "exp" (default), a fixed step h > 0, or a callable rng -> tau
     """
 
     def __init__(self, G, u, l, T, step_law="exp"):
